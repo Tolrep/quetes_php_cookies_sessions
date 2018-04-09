@@ -1,4 +1,51 @@
-<?php require 'inc/head.php'; ?>
+<?php require 'inc/head.php';
+session_start();
+
+if (!isset($_SESSION["loginname"])) {
+    header("Location:login.php");
+    die;
+}
+
+if ($_GET["add_to_cart"] == 46) {
+    if (!empty($_SESSION["pecanNuts"])) {
+        $_SESSION["pecanNuts"]++;
+    } else {
+        $_SESSION["pecanNuts"] = 1;
+    }
+}
+
+if ($_GET["add_to_cart"] == 36) {
+    var_dump($_SESSION["chocolateChips"]);
+    if (!empty($_SESSION["chocolateChips"])) {
+        $_SESSION["chocolateChips"]++;
+    } else {
+        $_SESSION["chocolateChips"] = 1;
+    }
+}
+
+if ($_GET["add_to_cart"] == 58) {
+    if (!empty($_SESSION["chocolateCookie"])) {
+        $_SESSION["chocolateCookie"]++;
+    } else {
+        $_SESSION["chocolateCookie"] = 1;
+    }
+}
+
+if ($_GET["add_to_cart"] == 32) {
+    if (!empty($_SESSION["M&MCookies"])) {
+        $_SESSION["M&MCookies"]++;
+    } else {
+        $_SESSION["M&MCookies"] = 1;
+    }
+}
+
+if ($_GET["unsign"] == 1) {
+    unset($_SESSION["loginname"]);
+    header("Location:login.php");
+    die;
+}
+
+?>
 <section class="cookies container-fluid">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
@@ -49,6 +96,9 @@
         </figcaption>
       </figure>
     </div>
+      <a  href="?unsign=1" class="btn btn-danger">
+          Unsign
+      </a>
   </div>
 </section>
 <?php require 'inc/foot.php'; ?>
