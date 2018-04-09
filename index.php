@@ -1,5 +1,4 @@
 <?php require 'inc/head.php';
-session_start();
 if (!isset($_SESSION["loginname"])) {
     header("Location:login.php");
     die;

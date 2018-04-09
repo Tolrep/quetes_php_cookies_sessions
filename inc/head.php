@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,6 +50,8 @@
     </div><!-- /.container-fluid -->
   </nav>
   <div class="container-fluid text-right">
-    <strong>Hello <?=$_SESSION["loginname"]?>!</strong>
+      <?php if (isset($_SESSION["loginname"])) {?>
+    <strong>Hello <?= $_SESSION["loginname"]?>!</strong>
+      <?php } ?>
   </div>
 </header>

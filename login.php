@@ -1,15 +1,12 @@
 <?php
 require 'inc/head.php';
-if (isset($_POST)) {
-    if (isset($_POST["loginname"])) {
-        session_start();
+if (!empty($_POST["loginname"])) {
         $_SESSION["loginname"] = $_POST["loginname"];
         header("Location:index.php");
         die;
-    }
 }
 
-if ($_SESSION["loginname"]) {
+if (!empty($_SESSION["loginname"])) {
     header("Location:index.php");
     die;
 }
