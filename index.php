@@ -1,6 +1,5 @@
 <?php require 'inc/head.php';
 session_start();
-
 if (!isset($_SESSION["loginname"])) {
     header("Location:login.php");
     die;
@@ -15,7 +14,6 @@ if ($_GET["add_to_cart"] == 46) {
 }
 
 if ($_GET["add_to_cart"] == 36) {
-    var_dump($_SESSION["chocolateChips"]);
     if (!empty($_SESSION["chocolateChips"])) {
         $_SESSION["chocolateChips"]++;
     } else {
@@ -40,7 +38,7 @@ if ($_GET["add_to_cart"] == 32) {
 }
 
 if ($_GET["unsign"] == 1) {
-    unset($_SESSION["loginname"]);
+    session_destroy();
     header("Location:login.php");
     die;
 }

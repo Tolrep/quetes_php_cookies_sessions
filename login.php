@@ -1,6 +1,5 @@
 <?php
 require 'inc/head.php';
-session_start();
 if (isset($_POST)) {
     if (isset($_POST["loginname"])) {
         session_start();
