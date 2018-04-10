@@ -3,7 +3,7 @@ if (!isset($_SESSION["loginname"])) {
     header("Location:login.php");
     die;
 }
-if (isset($_GET)) {
+if (!empty($_GET)) {
     if ($_GET["add_to_cart"] == 46) {
         if (!empty($_SESSION["pecanNuts"])) {
             $_SESSION["pecanNuts"]++;
