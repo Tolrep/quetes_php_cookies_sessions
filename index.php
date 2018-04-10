@@ -46,12 +46,6 @@ if (!empty($_GET)) {
     }
 }
 
-if ($_GET["unsign"] == 1) {
-        header("Location:login.php");
-        session_destroy();
-        die;
-    }
-
 
 ?>
 <section class="cookies container-fluid">
