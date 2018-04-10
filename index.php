@@ -1,13 +1,15 @@
-<?php require 'inc/head.php';
+<?php
+require 'inc/head.php';
 if (!isset($_SESSION["loginname"])) {
     header("Location:login.php");
     die;
 }
-
-if ($_GET["unsign"] == 1) {
-    header("Location:login.php");
-    session_destroy();
-    die;
+if (isset($_GET["unsign"])) {
+    if ($_GET["unsign"] == 1) {
+        header("Location:login.php");
+        session_destroy();
+        die;
+    }
 }
 
 if (!empty($_GET)) {
