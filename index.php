@@ -3,43 +3,44 @@ if (!isset($_SESSION["loginname"])) {
     header("Location:login.php");
     die;
 }
-
-if ($_GET["add_to_cart"] == 46) {
-    if (!empty($_SESSION["pecanNuts"])) {
-        $_SESSION["pecanNuts"]++;
-    } else {
-        $_SESSION["pecanNuts"] = 1;
+if (isset($_GET)) {
+    if ($_GET["add_to_cart"] == 46) {
+        if (!empty($_SESSION["pecanNuts"])) {
+            $_SESSION["pecanNuts"]++;
+        } else {
+            $_SESSION["pecanNuts"] = 1;
+        }
     }
-}
 
-if ($_GET["add_to_cart"] == 36) {
-    if (!empty($_SESSION["chocolateChips"])) {
-        $_SESSION["chocolateChips"]++;
-    } else {
-        $_SESSION["chocolateChips"] = 1;
+    if ($_GET["add_to_cart"] == 36) {
+        if (!empty($_SESSION["chocolateChips"])) {
+            $_SESSION["chocolateChips"]++;
+        } else {
+            $_SESSION["chocolateChips"] = 1;
+        }
     }
-}
 
-if ($_GET["add_to_cart"] == 58) {
-    if (!empty($_SESSION["chocolateCookie"])) {
-        $_SESSION["chocolateCookie"]++;
-    } else {
-        $_SESSION["chocolateCookie"] = 1;
+    if ($_GET["add_to_cart"] == 58) {
+        if (!empty($_SESSION["chocolateCookie"])) {
+            $_SESSION["chocolateCookie"]++;
+        } else {
+            $_SESSION["chocolateCookie"] = 1;
+        }
     }
-}
 
-if ($_GET["add_to_cart"] == 32) {
-    if (!empty($_SESSION["M&MCookies"])) {
-        $_SESSION["M&MCookies"]++;
-    } else {
-        $_SESSION["M&MCookies"] = 1;
+    if ($_GET["add_to_cart"] == 32) {
+        if (!empty($_SESSION["M&MCookies"])) {
+            $_SESSION["M&MCookies"]++;
+        } else {
+            $_SESSION["M&MCookies"] = 1;
+        }
     }
-}
 
-if ($_GET["unsign"] == 1) {
-    session_destroy();
-    header("Location:login.php");
-    die;
+    if ($_GET["unsign"] == 1) {
+        session_destroy();
+        header("Location:login.php");
+        die;
+    }
 }
 
 ?>
