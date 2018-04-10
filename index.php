@@ -36,9 +36,9 @@ if (!empty($_GET)) {
         }
     }
 
-    if ($_GET["unsign"] == 1) {
-        session_destroy();
+    if (isset($_GET["unsign"])) {
         header("Location:login.php");
+        session_destroy();
         die;
     }
 }
