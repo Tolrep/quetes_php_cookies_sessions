@@ -35,13 +35,14 @@ if (!empty($_GET)) {
             $_SESSION["M&MCookies"] = 1;
         }
     }
+}
 
-    if (isset($_GET["unsign"])) {
+if ($_GET["unsign"] == 1) {
         header("Location:login.php");
         session_destroy();
         die;
     }
-}
+
 
 ?>
 <section class="cookies container-fluid">
