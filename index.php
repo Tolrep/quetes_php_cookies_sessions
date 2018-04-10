@@ -3,6 +3,13 @@ if (!isset($_SESSION["loginname"])) {
     header("Location:login.php");
     die;
 }
+
+if ($_GET["unsign"] == 1) {
+    header("Location:login.php");
+    session_destroy();
+    die;
+}
+
 if (!empty($_GET)) {
     if ($_GET["add_to_cart"] == 46) {
         if (!empty($_SESSION["pecanNuts"])) {
